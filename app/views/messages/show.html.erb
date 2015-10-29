@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @message.content %>
+</p>
+<p>
+  <strong>Recipient:</strong>
+  <%= @message.recipient %>
+</p>
+<% if @message.password? %>
+  <p>
+    <strong>Message is password protected</strong>
+  </p>
+<% end %>
