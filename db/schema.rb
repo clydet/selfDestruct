@@ -17,6 +17,8 @@ ActiveRecord::Schema.define(version: 20151029052305) do
     t.text     "content"
     t.text     "recipient"
     t.text     "password"
+    t.text     "message_id"
+    t.boolean  "viewed"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
