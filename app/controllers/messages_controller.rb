@@ -1,14 +1,11 @@
 class MessagesController < ApplicationController
   require 'securerandom'
-
-  #before_action :set_article, only: [:show, :edit, :update, :destroy]
+  
   before_action :set_message, only: [:show, :destroy]
 
   # GET /messages
   def index
-  	puts '@messages', @messages
   	@messages = Message.all
-  	puts '@messages', @messages
   end
 
   # GET /messages/new
