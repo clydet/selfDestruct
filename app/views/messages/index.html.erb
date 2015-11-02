@@ -15,7 +15,7 @@
   <tbody>
     <% @messages.each do |message| %>
       <tr>
-        <td><%= url_for(only_path: false, action: 'show', controller: 'recipients', id: message.message_id) %></td>
+        <td><%= link_to 'Review message', message %></td>
         <td><%= message.recipient %></td>
         <td><%= link_to 'Delete Message', message, method: :delete %></td>
       </tr>
