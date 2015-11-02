@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>A message has been left for you</h1>
+    <p>
+      View it here: 
+      <%= url_for(only_path: false, action: 'show', controller: 'recipients', id: @message.message_id) %>.
+      <br>
+    </p>
+  </body>
+</html>
