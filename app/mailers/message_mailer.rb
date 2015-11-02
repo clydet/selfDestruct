@@ -1,6 +1,6 @@
 class MessageMailer < ApplicationMailer
 
-  default from: 'iamclyde@gmail.com'
+  default from: 'selfdestructmsg@gmail.com'
  
   def sd_message(message)
     @message = message

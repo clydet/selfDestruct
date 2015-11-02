@@ -24,9 +24,7 @@ class MessagesController < ApplicationController
     @message.authenticated = !@message.password?
 
     if @message.save
-      puts 'message created'
       MessageMailer.sd_message(@message).deliver_now
-      puts 'message sent?'
       redirect_to action: 'index', notice: 'Message was successfully created.'
     else
       render :new
