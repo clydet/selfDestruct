@@ -19,8 +19,8 @@ ActiveRecord::Schema.define(version: 20151029052305) do
     t.text     "password"
     t.text     "message_id"
     t.boolean  "authenticated"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end
