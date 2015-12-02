@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   resources 'messages', :only => [:index, :new, :create, :show, :destroy]
+  
+  get 'recipients/:id' => 'recipients#show'
+  get 'recipients/:id/authenticate' => 'recipients#authenticate'
+  post 'recipients/:id' => 'recipients#authenticatedShow'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

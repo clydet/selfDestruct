@@ -15,7 +15,7 @@
   <tbody>
     <% @messages.each do |message| %>
       <tr>
-        <td><%= 'TODO: host/messages/' + message.message_id %></td>
+        <td><%= link_to 'Review message', message %></td>
         <td><%= message.recipient %></td>
         <td><%= link_to 'Delete Message', message, method: :delete %></td>
       </tr>

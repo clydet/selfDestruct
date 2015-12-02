@@ -1,0 +1,13 @@
+<h1>Please Authenticate</h1>
+
+<%= form_for(@message, method: 'post', url: '/recipients/' + @message.message_id) do |m| %>
+
+  <div class="field">
+    <%= m.label :password %><br>
+    <%= m.password_field :password %>
+  </div>
+  
+  <div class="actions">
+    <%= m.submit %>
+  </div>
+<% end %>

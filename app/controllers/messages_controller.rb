@@ -21,22 +21,20 @@ class MessagesController < ApplicationController
   def create
     @message = Message.new(message_params)
     @message.message_id = SecureRandom.uuid;
+    @message.authenticated = !@message.password?
 
-    respond_to do |format|
-      if @message.save
-        format.html { redirect_to action: 'index', notice: 'Message was successfully created.' }
-      else
-        format.html { render :new }
-      end
+    if @message.save
+      MessageMailer.sd_message(@message).deliver_now
+      redirect_to action: 'index', notice: 'Message was successfully created.'
+    else
+      render :new
     end
   end
 
   # DELETE /messages/1
   def destroy
     @message.destroy
-    respond_to do |format|
-      format.html { redirect_to action: 'index', notice: 'Message was successfully destroyed.' }
-    end
+    redirect_to action: 'index', notice: 'Message was successfully destroyed.'
   end
 
   private

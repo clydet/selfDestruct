@@ -5,7 +5,7 @@ class CreateMessages < ActiveRecord::Migration
       t.text    :recipient
       t.text    :password
       t.text    :message_id, :unique => true
-      t.boolean :viewed
+      t.boolean :authenticated
 
       t.timestamps null: false
     end
